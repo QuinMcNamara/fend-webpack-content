@@ -8,6 +8,8 @@ module.exports = {
     devtool: 'source-map',
     entry: './src/client/index.js',
     output: {
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.min.js',
         libraryTarget: 'var',
         library: 'Client'
     },
