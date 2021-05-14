@@ -3,7 +3,6 @@ dotenv.config();
 
 var path = require('path');
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Start up an instance of the app
@@ -14,6 +13,8 @@ app.use(express.static('dist'));
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors());
+
 
 // GET Route
 app.get('/', function (req, res) {
