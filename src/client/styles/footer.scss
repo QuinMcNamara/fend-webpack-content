@@ -1,0 +1,48 @@
+.footer {
+	display: flex;
+	height: 35px;
+	padding: 8px;
+	border-radius: 5px;
+	background-color: #adadad;
+	align-items: center;
+	justify-content: center;
+}
+
+.copyright {
+	width: 75%;
+	color: #0f3cdb;
+	text-align: center;
+}
+
+.social {
+	width: 25%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* Social Links */
+
+.fa {
+	color: #0f3cdb;
+	padding: 5px;
+	text-align: center;
+}
+
+.fa:hover {
+	opacity: 0.5;
+}
+
+
+/*Media Queries */
+
+@media (max-width: 599px) {
+	.copyright {
+		width: 50%;
+	}
+
+	.social {
+		width: 50%;
+	}
+}
