@@ -1,5 +1,5 @@
 import { handleSubmit } from './js/formHandler'
-import { checkForName } from './js/nameChecker'
+import { isURL } from './js/isURL'
 
 import './styles/resets.scss'
 import './styles/base.scss'
@@ -11,5 +11,5 @@ alert("I exist!")
 
 export {
     handleSubmit,
-    checkForName
+    isURL
 }
