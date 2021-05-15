@@ -2,36 +2,63 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Evaluate Article with Natural Language Processing</title>
     </head>
 
     <body>
 
         <header>
-            <div class="">
-                Logo
+            <div class="header_title">
+                <h1>Evaluate Article with NLP</h1>
             </div>
-            <div class="">
-                navigation
+            <div class="header_subtitle">
+                <h3>Udacity FEND Project</h3>
             </div>
         </header>
 
         <main>
+            <section class="intro">
+                <h2>MeaningCloud Sentiment Analysis:</h2>
+                <p>MeaningCloud will analyze the sentiment of the text content on a webpage</p>
+                <p>Please enter a valid URL in the form below</p>
+                <p>The results will be listed as follows:</p>
+                <ul>
+                    <li>Agreement: The various sentiment in the text is uniform or not</li>
+                    <li>Subjectivity: The content is subjective or objective</li>
+                    <li>Polarity: Rates the content tone on a scale from positive to negative</li>
+                    <li>Irony: The content is ironic or non-ironic</li>
+                    <li>Confidence: The confidence level of the results - on a scale from 0-100</li>
+                </ul>
+            </section>
             <section>
                 <form class="" onsubmit="return CLient.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="url" type="text" name="input" value="" placeholder="Please Enter Valid URL">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return CLient.handleSubmit(event)">
                 </form>
             </section>
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="agreement"></div>
+                <div id="subjectivity"></div>
+                <div id="polarity"></div>
+                <div id="irony"></div>
+                <div id="confidence"></div>
             </section>
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <div class="nlp_provider">
+                <h3>Powered by MeaningCloud Natural Language Processing</h3>
+            </div>
+            <div class="social">
+				<a href="#" class="fa fa-facebook"></a>
+				<a href="#" class="fa fa-linkedin"></a>
+				<a href="#" class="fa fa-twitter"></a>
+				<a href="#" class="fa fa-instagram"></a>
+				<a href="#" class="fa fa-pinterest"></a>
+			</div>
         </footer>
 
     </body>
