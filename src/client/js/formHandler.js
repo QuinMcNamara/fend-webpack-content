@@ -2,9 +2,9 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('url').value
+    let formInput = document.getElementById('url').value
     
-    if (Client.isURL(formText)) {
+    if (Client.isURL(formInput)) {
 
         console.log("::: Form Submitted :::")
         fetch('http://localhost:8081/test')
