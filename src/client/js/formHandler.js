@@ -1,17 +1,19 @@
 function handleSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
+    // Set variable to URL entered by user
     let formInput = document.getElementById('url').value
     
+
+	// Check for Valid URL 
     if (Client.isURL(formInput)) {
 
         console.log("::: Form Submitted :::")
-        fetch('http://localhost:8081/test')
-        .then(res => {
-            return res.json()
-        })
-        .then(function(res) {
+        postData('http://localhost:8081/api', {input: formInput})
+
+		// Modeled after code here: https://bithacker.dev/fetch-weather-openweathermap-api-javascript
+		// Updates UI Text
+        .then((res) => {
 			console.log(res);
             document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
             document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
@@ -23,18 +25,6 @@ function handleSubmit(event) {
     else {
         alert('The URL is invalid. Please enter a valid URL');
     }
-}
-
-//Function to GET Web API Data
-const retrieveData = async(baseURL, zipCode, apiKey) => {
-	const response = await fetch(`${baseURL}zip=${zipCode}&appid=${apiKey}`)
-	try {
-		const allData = await response.json();
-		return allData;
-	}
-	catch(error) {
-		console.log('error:', error);
-	}
 };
 
 //Function to POST data
@@ -52,21 +42,6 @@ const postData = async(url = '', data = {}) => {
 	try {
 		const newData = await response.json();
 		return newData;
-	}
-	catch(error) {
-		console.log('error:', error);
-	}
-};
-
-//Function to GET Project data and update UI
-// Modeled after code here: https://bithacker.dev/fetch-weather-openweathermap-api-javascript
-const updateUI = async() => {
-	const request = await fetch('/all');
-	try {
-		const weatherData = await request.json();
-		document.getElementById('date').innerHTML = `Date: ${weatherData.date}`;
-		document.getElementById('temp').innerHTML = `Current Temp: ${fahrenheit(weatherData.temp)}`;
-		document.getElementById('content').innerHTML = `Current Feeling: ${weatherData.content}`;
 	}
 	catch(error) {
 		console.log('error:', error);
