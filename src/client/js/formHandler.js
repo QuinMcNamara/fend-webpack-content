@@ -12,6 +12,7 @@ function handleSubmit(event) {
             return res.json()
         })
         .then(function(res) {
+			console.log(res);
             document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
             document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
             document.getElementById('irony').innerHTML = `Irony: ${res.irony}`;
