@@ -1,29 +1,26 @@
-import isURL from './isURL'
-
 function handleSubmit(event) {
     event.preventDefault()
 
     // Set variable to URL entered by user
     let formInput = document.getElementById('url').value;
     const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
+	const apiKey = getApiInfo();
 
-	// Check for Valid URL 
-    // if (Client.isURL(formInput)) {
+	const completeURL = `${baseURL}?key=${apiKey}&url=${formInput}&lang=en`;
+	const mcData = getMeaningData(completeURL);
 
-	console.log("::: Form Submitted :::")
-	postData('http://localhost:8081/api', {input: formInput})
+	updateUI(mcData);
+};
 
-	// Modeled after code here: https://bithacker.dev/fetch-weather-openweathermap-api-javascript
-	// Updates UI Text
-	.then((res) => {
-		console.log(res);
-		document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
-		document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
-		document.getElementById('irony').innerHTML = `Irony: ${res.irony}`;
-		document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
-		document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
-	})
-}
+// 	.then((mcData) => {
+// 		console.log(mcData);
+// 		document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
+// 		document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
+// 		document.getElementById('irony').innerHTML = `Irony: ${res.irony}`;
+// 		document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
+// 		document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
+// 	})
+// }
 //     else {
 //         alert('The URL is invalid. Please enter a valid URL');
 //     }
@@ -32,14 +29,36 @@ function handleSubmit(event) {
 
 // Function to get API Information
 const getApiInfo = async() => {
-	const request = fetch('http://localhost:8081/apiInfo');
+	const response = fetch('http://localhost:8081/apiInfo');
 	try {
-		const apiKey = (await request).json();
+		const apiKey = (await response).json();
 		return apiKey;
 	}
 	catch (error) {
 		console.log('error retrieving api key', error)
 	}
+};
+
+// Function to get API Response
+const getMeaningData = async(completeURL) => {
+	const response = await fetch(completeURL);
+	try {
+		const meaningData = await response.json();
+		return meaningData;
+	}
+	catch (error) {
+		console.log('error retrieving MeaningData', error)
+	}
+};
+
+// Function to update UI
+function updateUI(data) {
+	console.log(data);
+	document.getElementById('agreement').innerHTML = `Agreement: ${data.agreement}`;
+	document.getElementById('subjectivity').innerHTML = `Subjectivity: ${data.subjectivity}`;
+	document.getElementById('irony').innerHTML = `Irony: ${data.irony}`;
+	document.getElementById('confidence').innerHTML = `Confidence: ${data.confidence}`;
+	document.getElementById('polarity').innerHTML = `Polarity: ${data.score_tag}`;
 };
 
 
