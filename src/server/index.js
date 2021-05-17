@@ -1,3 +1,5 @@
+apiData = {};
+
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -24,7 +26,7 @@ let formEntry = '';
 app.post('/api', async (req, res) => {
     formEntry = req.body.url;
     const response = await fetch(`${baseURL}?key=${apiKey}&url=${formEntry}&lang=en`);
-    const apiData = response.json();
+    apiData = response.json();
     res.send(apiData);
 });
 
