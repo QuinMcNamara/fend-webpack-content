@@ -19,7 +19,7 @@ function handleSubmit(event) {
             document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
             document.getElementById('irony').innerHTML = `Irony: ${res.irony}`;
             document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
-            document.getElementById('polarity').innerHTML = `Polarity: ${res.polarity}`;
+            document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
         })
     }
     else {
