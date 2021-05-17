@@ -40,10 +40,4 @@ app.listen(port, function (error) {
     console.log(`Example app listening on port: ${port}!`)
 });
 
-// Test GET Route
-const mockAPIResponse = require('./mockAPI.js');
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-});
-
 console.log(__dirname);
