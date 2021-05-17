@@ -30,25 +30,25 @@ function handleSubmit(event) {
 // };
 
 //Function to POST data
-const postData = async(url = '', data = {}) => {
+// const postData = async(url = '', data = {}) => {
 
-	const response = await fetch (url, {
-		method: 'POST',
-		mode: 'cors',
-		headers: {
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(data),
-	});
+// 	const response = await fetch (url, {
+// 		method: 'POST',
+// 		mode: 'cors',
+// 		headers: {
+// 			'Content-Type': 'application/json',
+// 		},
+// 		body: JSON.stringify(data),
+// 	});
 
-	try {
-		const newData = await response.json();
-		return newData;
-	}
-	catch(error) {
-		console.log('error:', error);
-	}
-};
+// 	try {
+// 		const newData = await response.json();
+// 		return newData;
+// 	}
+// 	catch(error) {
+// 		console.log('error:', error);
+// 	}
+// };
 
 
 export { handleSubmit };
