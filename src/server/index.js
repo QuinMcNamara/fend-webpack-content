@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 });
 
-app.get('/apiInfo', function (req,res){
+app.get('/apiInfo', function (req,res) {
     res.send(apiInfo)
 })
 
