@@ -13,7 +13,7 @@ const app = express();
 // Initialize dist as project folder for app
 app.use(express.static('dist'));
 
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
 
