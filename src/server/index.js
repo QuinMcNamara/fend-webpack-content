@@ -27,6 +27,7 @@ app.post('/api', async (req, res) => {
     formEntry = req.body.url;
     const response = await fetch(`${baseURL}?key=${apiKey}&url=${formEntry}&lang=en`);
     apiData = response.json();
+    console.log(apiData)
     res.send(apiData);
 });
 
