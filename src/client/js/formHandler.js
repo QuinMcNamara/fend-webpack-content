@@ -1,3 +1,5 @@
+import isURL from './isURL'
+
 function handleSubmit(event) {
     event.preventDefault()
 
@@ -6,26 +8,26 @@ function handleSubmit(event) {
     
 
 	// Check for Valid URL 
-    if (Client.isURL(formInput)) {
+    // if (Client.isURL(formInput)) {
 
-        console.log("::: Form Submitted :::")
-        postData('http://localhost:8081/api', {input: formInput})
+	console.log("::: Form Submitted :::")
+	postData('http://localhost:8081/api', {input: formInput})
 
-		// Modeled after code here: https://bithacker.dev/fetch-weather-openweathermap-api-javascript
-		// Updates UI Text
-        .then((res) => {
-			console.log(res);
-            document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
-            document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
-            document.getElementById('irony').innerHTML = `Irony: ${res.irony}`;
-            document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
-            document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
-        })
-    }
-    else {
-        alert('The URL is invalid. Please enter a valid URL');
-    }
-};
+	// Modeled after code here: https://bithacker.dev/fetch-weather-openweathermap-api-javascript
+	// Updates UI Text
+	.then((res) => {
+		console.log(res);
+		document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
+		document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
+		document.getElementById('irony').innerHTML = `Irony: ${res.irony}`;
+		document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
+		document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
+	})
+}
+//     else {
+//         alert('The URL is invalid. Please enter a valid URL');
+//     }
+// };
 
 //Function to POST data
 const postData = async(url = '', data = {}) => {
