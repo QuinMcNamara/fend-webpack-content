@@ -32,6 +32,7 @@ const getApiInfo = async() => {
 	const response = fetch('http://localhost:8081/apiInfo');
 	try {
 		const apiKey = (await response).json();
+		console.log('Returned API Key')
 		return apiKey;
 	}
 	catch (error) {
@@ -44,6 +45,7 @@ const getMeaningData = async(completeURL) => {
 	const response = await fetch(completeURL);
 	try {
 		const meaningData = await response.json();
+		console.log('meaning data:', meaningData);
 		return meaningData;
 	}
 	catch (error) {
