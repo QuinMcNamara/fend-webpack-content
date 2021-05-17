@@ -17,14 +17,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(cors());
 
-// Meaning Cloud API Variables
-const apiInfo = {
-    apiKey: process.env.API_KEY,
-    baseURL: 'https://api.meaningcloud.com/sentiment-2.1',
-};
-// const apiKey = process.env.API_KEY;
-// const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
-// let formEntry = '';
+// Meaning Cloud API Key
+const apiKey = process.env.API_KEY;
+let formEntry = '';
 
 // POST Route
 // app.post('/api', async (req, res) => {
@@ -46,7 +41,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/apiInfo', function (req,res) {
-    res.send(apiInfo)
+    res.send(apiKey)
 })
 
 // Designates what port the app will listen to for incoming requests
