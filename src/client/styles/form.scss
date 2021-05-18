@@ -1,12 +1,28 @@
+$backingopacity: rgba(110, 110, 110, .3);
+
 .form {
+	display: flex;
     border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: #f5ab22;
 }
 
 input, button {
     padding: 5px 20px;
     width: 100%;
     line-height: 16px;
-    margin: 10px 0;
+    margin: 10px 0px;
+    border-radius: 5px;
+}
+
+#submit {
+	cursor: pointer;
+	font-size: 18px;
+	letter-spacing: 0.1em;
+	background-color: #cf2727;
+	width: 200px;
+    &:hover {
+        background: $backingopacity;
+    }
 }
