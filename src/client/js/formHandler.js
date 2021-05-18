@@ -8,7 +8,7 @@ function handleSubmit(event) {
 
 	if(isURL(formInput)) {
 		let validURL = {formInput};
-		fetch('http://localhost:8081/meaningData', {
+		fetch('http://localhost:3030/meaningData', {
 			method: 'POST',
 			credentials: 'same-origin',
 			headers: {

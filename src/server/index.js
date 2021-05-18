@@ -49,7 +49,7 @@ function meaningData(req, res) {
 };
 
 // Designates what port the app will listen to for incoming requests
-const port = 8081;
+const port = 3030;
 app.listen(port, function (error) {
     if (error) console.log(error);
     console.log(`Example app listening on port: ${port}!`)
