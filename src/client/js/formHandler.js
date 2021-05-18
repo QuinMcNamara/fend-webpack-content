@@ -1,4 +1,4 @@
-import isURL from './isURL';
+import {isURL} from './isURL';
 
 function handleSubmit(event) {
     event.preventDefault();
