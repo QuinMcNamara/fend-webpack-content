@@ -35,7 +35,7 @@ app.post('/meaningData', meaningData);
 
 // Function for POST Route
 function meaningData(req, res) {
-    const userURL = req.body.url;
+    const userURL = req.body.formInput;
     fetch(`${baseURL}?key=${apiKey}&url=${userURL}&lang=en`, {
         method: 'POST',
 		credentials: 'same-origin',
