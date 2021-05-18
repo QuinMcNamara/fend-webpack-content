@@ -18,4 +18,6 @@ function isURL(userURL)
 
 
 
-export { isURL };
+export {
+  isURL
+};
