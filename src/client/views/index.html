@@ -31,10 +31,10 @@
                 </ul>
             </section>
             <section>
-                <section class="form">
+                <form class="form" onsubmit="return Client.handleSubmit(event)">
                     <input id="url" type="text" name="input" value="" placeholder="Please Enter Valid URL">
-                    <button id="submit" type="submit" value="submit" onclick="return Client.handleSubmit(event)">Submit</button>
-                </section>
+                    <input id="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="Client.handleSubmit(event)">
+                </form>
             </section>
 
             <section>
