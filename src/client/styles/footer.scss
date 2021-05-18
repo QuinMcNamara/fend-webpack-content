@@ -28,10 +28,9 @@
 	color: #0f3cdb;
 	padding: 5px;
 	text-align: center;
-}
-
-.fa:hover {
-	opacity: 0.5;
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 
