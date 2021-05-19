@@ -1,27 +1,28 @@
-# Webpack Express Example App
+# Evaluate a News Article with Natural Language Processing
 
-The goal of this repo is be an example of a basic but functional app built on Express and Webpack.
+The goal of this project was to create an application that uses web tools to analyze the text content from a webpage with Natural Language Processing(NLP) using the Meaning Cloud Platform.
 
-If you want to follow along with the course, you will start from the master and switch to the appropriate numbered branches of this repo as needed. The branches are:
-- [0-initial-setup](https://github.com/udacity/fend-webpack-content/tree/0-initial-setup)
-- [1-install-webpack](https://github.com/udacity/fend-webpack-content/tree/1-install-webpack)
-- [2-add-webpack-entry](https://github.com/udacity/fend-webpack-content/tree/2-add-webpack-entry)
-- [3-webpack-output-and-loaders](https://github.com/udacity/fend-webpack-content/tree/3-webpack-output-and-loaders)
-- [4-webpack-plugins](https://github.com/udacity/fend-webpack-content/tree/4-webpack-plugins)
-- [5-webpack-mode](https://github.com/udacity/fend-webpack-content/tree/5-webpack-mode)
-- [6-webpack-for-convenience](https://github.com/udacity/fend-webpack-content/tree/6-webpack-for-convenience)
-
-Each one is a step along the path to creating a fully functional webpack setup. In each branch, there will be a documentation file that lists out the steps taken in that branch (each step should also match to a git commit if you look at the history) which you can use as a checklist when setting up your own projects. 
+Please visit Meaning Cloud to explore more about NLP and sign up for a personal API Key.
+```
+https://www.meaningcloud.com
+```
+The application works by allowing a user to submit a valid URL address into the form provided and having the text at that URL analyzed for sentiment.
 
 ## Get Up and Running
 
-Fork this repo, then clone your forked repo down to your computer:
+To begin, please fork this repo, then clone the forked repo.
 
-```
-git clone -- git@github.com:[your-user-name]/webpack-express.git --
-```
+Next, sign up for a personal API Key with Meaning Cloud, as shown above.
 
+Create a file with the title `.env` in the root directory of the project.
+Within this file, please enter the following:
+```
+API_KEY=****************
+```
+(where the ****** is replaced with your unique API Key)
+
+Next:
 `cd` into your new folder and run:
 - ```npm install```
 - ```npm start``` to start the app
-- this app runs on localhost:8080, but you can of course edit that in index.js
+- this app runs on localhost:3030, but you can of course edit that in index.js
