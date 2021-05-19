@@ -1,5 +1,9 @@
 $backingopacity: rgba(110, 110, 110, .3);
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
