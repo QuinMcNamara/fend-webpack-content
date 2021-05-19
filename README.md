@@ -24,5 +24,5 @@ API_KEY=****************
 Next:
 `cd` into your new folder and run:
 - ```npm install```
-- ```npm start``` to start the app
+- ```npm run start``` to start the app
 - this app runs on localhost:3030, but you can of course edit that in index.js
